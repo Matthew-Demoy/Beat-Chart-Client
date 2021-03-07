@@ -23,7 +23,7 @@ export const {saveCharts} = chartsSlice.actions;
 
 export const getCharts = (isTop100: boolean): AppThunk => async dispatch  => {
     const queryString = isTop100 ? '?isTop100=true' : '?isTop100=false'
-    const res = await fetch('/charts/top-100' + queryString)
+    const res = await fetch('/api/charts/top-100' + queryString)
     dispatch(saveCharts(await res.json()))
 }
 
