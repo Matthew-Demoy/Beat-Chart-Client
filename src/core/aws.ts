@@ -17,7 +17,7 @@ export const getSignedURLForObject = (key: string) => {
     region: process.env.REACT_APP_AWS_REGION,
   });
 
-  console.log(process.env.REACT_APP_S3_BUCKET)
+  
   const url = s3.getSignedUrl("getObject", {
     Bucket: S3_BUCKET,
     Key: key,
