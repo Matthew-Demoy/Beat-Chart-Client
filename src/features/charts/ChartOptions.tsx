@@ -6,8 +6,8 @@ const ChartOptions = () => {
     const dispatch = useDispatch()
 
     const [isPopular, changePopular] = useState<boolean>(true)
-    let popularBtnClasses = ['col-span-3 h-12 my-2']
-    let selectionBtnClasses = ['col-span-3  h-12 my-2"']
+    //let popularBtnClasses = ['col-span-3 h-12 my-2']
+    //let selectionBtnClasses = ['col-span-3  h-12 my-2"']
 
     const handlePopularClick = () => {
       dispatch(getCharts(true))
