@@ -5,7 +5,7 @@ const defaultOptions:  RequestInit = {
     method: "GET"
 }
 const api = async (endpoint: string, options: RequestInit = {}) => {
-    const res = await fetch(endpoint, {...defaultOptions})
+    const res = await fetch(url+endpoint, {...defaultOptions})
     return await res.json()
 }
 
