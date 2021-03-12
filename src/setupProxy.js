@@ -6,7 +6,8 @@ var cors = require('cors');
 const apiUrl = process.env.REACT_APP_API_URL
 
 module.exports = function(app) {
+  
     app.use(
-        proxy('/api', { target:  process.env.REACT_APP_API_URL })
+        proxy('/api', { target:  apiUrl })
       );
 }

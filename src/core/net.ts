@@ -4,8 +4,8 @@ const url = process.env.REACT_APP_API_URL ? process.env.REACT_APP_API_URL : 'loc
 const defaultOptions:  RequestInit = {
     method: "GET"
 }
-const api = async (endpoint: string, options: RequestInit) => {
-    const res = await fetch('http://' +url + endpoint, {...defaultOptions, ...options})
+const api = async (endpoint: string, options: RequestInit = {}) => {
+    const res = await fetch(endpoint, {...defaultOptions})
     return await res.json()
 }
 

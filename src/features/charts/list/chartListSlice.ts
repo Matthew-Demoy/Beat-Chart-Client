@@ -23,8 +23,8 @@ export const {saveCharts} = chartsSlice.actions;
 export const getCharts = (isTop100: boolean): AppThunk => async dispatch  => {
     const queryString = isTop100 ? '?isTop100=true' : '?isTop100=false'
 
-    const res = await api('/api/charts/top-100' + queryString, options)
-    dispatch(saveCharts(await res.json()))
+    const res = await api('/api/charts' + queryString)
+    dispatch(saveCharts(res))
 }
 
 export const selectCharts = (state: RootState) => state.charts.playlists;
