@@ -24,28 +24,25 @@ type ChartCardProps = {
 const ChartCard = (props: ChartCardProps) => {
   const { chart } = props;
   return (
-    <div className={"bg-white overflow-hidden rounded shadow"}>
-      <div className={"inline-block "}>
-        <img alt="playlist cover" src={getSignedURLForObject(chart.cover)} />
-      </div>
+    <div className={" overflow-hidden "}>
+      <a
+        href={"https://open.spotify.com/playlist/" + chart.spotifyLink}
+        target="_blank"
+        rel="noreferrer"
+      >
+        <div className={"inline-block "}>
+          <img alt="playlist cover" src={getSignedURLForObject(chart.cover)} />
+        </div>
 
-      <div className={"bg-white p-2 grid grid-cols-2 gap-2"}>
-        <div className={"text-left"}>{chart.name}</div>
-        <div className={"text-right"}>{timeFromDate(chart.lastUpdated)}</div>
-        <button
-          className={"col-span-1 border-t-1 border-black bg-gray-400 p-2 "}
-        >
-          View
-        </button>
-        <a
-          className={"col-span-1 border-t-1 border-black bg-gray-400 p-2 "}
-          href={"https://open.spotify.com/playlist/" + chart.spotifyLink}
-        >
-          <button>Spotify</button>
-        </a>
+        <div className={" p-1 grid grid-cols-4 gap-2"}>
+          <div className={"text-left font-semibold col-span-3"}>
+            {chart.name}
+          </div>
+          <div className={"text-right"}>{timeFromDate(chart.lastUpdated)}</div>
 
-        <div></div>
-      </div>
+          <div></div>
+        </div>
+      </a>
     </div>
   );
 };
